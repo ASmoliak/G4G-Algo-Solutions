@@ -11,4 +11,6 @@ int main()
 	left->insertRight(new Node(5));
 
 	btree.head->insertRight(new Node(3));
+
+	std::cout << btree.findMinDepth(btree.head);
 }

@@ -21,6 +21,11 @@ struct Node
 	{
 		return (right = node);
 	}
+
+	bool isDeadEnd() const
+	{
+		return left == nullptr && right == nullptr;
+	}
 };
 
 class BinaryTree
@@ -76,19 +81,6 @@ public:
 				last_nodes.pop();
 			}
 		}
-
-	}
-
-	void insertRight(Node* node)
-	{
-		Node* current_node = head;
-
-		while (current_node->right != nullptr)
-		{
-			current_node = current_node->right;
-		}
-
-		current_node->right = node;
 	}
 
 	size_t findMinDepth(Node* node)
@@ -96,6 +88,11 @@ public:
 		if (node == nullptr)
 		{
 			return 0;
+		}
+
+		if (node->isDeadEnd())
+		{
+			return 1;
 		}
 
 		return std::min(findMinDepth(node->left), findMinDepth(node->right));
