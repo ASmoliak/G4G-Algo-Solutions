@@ -31,7 +31,7 @@ struct Node
 class BinaryTree
 {
 public:
-	Node *head;
+	Node* head;
 
 	BinaryTree(size_t head_value) :
 		head(new Node(head_value))
@@ -100,12 +100,36 @@ public:
 			return findMinDepth(node->right) + 1;
 		}
 
-		if(node->right == nullptr)
+		if (node->right == nullptr)
 		{
 			return findMinDepth(node->left) + 1;
 		}
 
 		return std::min(findMinDepth(node->left), findMinDepth(node->right)) + 1;
 	}
-};
 
+	size_t findMaxDepth(Node* node)
+	{
+		if (node == nullptr)
+		{
+			return 0;
+		}
+
+		if (node->isDeadEnd())
+		{
+			return 1;
+		}
+
+		if (node->left == nullptr)
+		{
+			return findMinDepth(node->right) + 1;
+		}
+
+		if (node->right == nullptr)
+		{
+			return findMinDepth(node->left) + 1;
+		}
+
+		return std::max(findMinDepth(node->left), findMinDepth(node->right)) + 1;
+	}
+};
