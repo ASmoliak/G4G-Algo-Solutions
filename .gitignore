@@ -57,3 +57,9 @@
 /SortedListInsert/Debug/SortedListInsert.tlog/CL.write.1.tlog
 /SortedListInsert/Debug/SortedListInsert.tlog/CL.read.1.tlog
 /SortedListInsert/Debug/SortedListInsert.tlog/CL.command.1.tlog
+/.vs/G4G-Solutions/v16
+*.recipe
+/ListRemove/Debug
+/SortedListInsert/Debug/SortedListInsert.tlog
+/Debug
+/BinaryTreeMinimumDepth/Debug
