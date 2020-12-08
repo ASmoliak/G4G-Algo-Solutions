@@ -95,7 +95,17 @@ public:
 			return 1;
 		}
 
-		return std::min(findMinDepth(node->left), findMinDepth(node->right));
+		if (node->left == nullptr)
+		{
+			return findMinDepth(node->right) + 1;
+		}
+
+		if(node->right == nullptr)
+		{
+			return findMinDepth(node->left) + 1;
+		}
+
+		return std::min(findMinDepth(node->left), findMinDepth(node->right)) + 1;
 	}
 };
 
